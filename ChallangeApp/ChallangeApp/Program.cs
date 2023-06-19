@@ -1,26 +1,22 @@
-﻿
-using System.ComponentModel.Design;
+﻿using System.IO.Pipes;
 
-var name = "Ewa";
-var isMale = false;
-var age = 33;
-
-
-if (age < 30 && isMale == false)
+int czyslo = 4466;
+string a = czyslo.ToString();
+char[] simw = a.ToCharArray();
+string[] tablica = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+int[] znacz = new int[10];
+for (int i = 0;i< simw.Length; i++)
 {
-    Console.WriteLine("Kobieta ponizej lat 30");
-}
-else if (age == 33 && name == "Ewa" && isMale == false)
-{
-    Console.WriteLine("Ewa, lat 33");
-}
-else if (age < 18 && isMale == true)
-{
-    Console.WriteLine("Niepelnoletni mezczyzna");
-}
-else if (age == 40 && isMale == true && name == "Kamil")
-{
-    Console.WriteLine("Kamil, lat 40");
-}
+        for (int g = 0;g < tablica.Length;g++)
+    {
+                if (int.Parse(tablica[g])  == int.Parse(simw[i].ToString()))
+        {  
+            znacz[g]++;
+        }
 
-
+    }
+}
+for (int i = 0; i< tablica.Length;i++)
+{
+    Console.WriteLine(tablica[i] + "  ->  " + znacz[i]);
+}
