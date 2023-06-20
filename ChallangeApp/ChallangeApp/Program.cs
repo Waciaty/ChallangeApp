@@ -1,22 +1,21 @@
 ﻿using System.IO.Pipes;
 
-int czyslo = 4466;
-string a = czyslo.ToString();
-char[] simw = a.ToCharArray();
-string[] tablica = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-int[] znacz = new int[10];
-for (int i = 0;i< simw.Length; i++)
+int number = 4466;
+char[] numberAsChar = number.ToString().ToCharArray();
+char[] counter = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+int[] result = new int[10];
+foreach (char c in numberAsChar)
 {
-        for (int g = 0;g < tablica.Length;g++)
+    for (int i = 0;i < counter.Length;i++)
     {
-                if (int.Parse(tablica[g])  == int.Parse(simw[i].ToString()))
-        {  
-            znacz[g]++;
+        if (counter[1] == c)
+        {
+            result[i] += 1;
         }
 
     }
 }
-for (int i = 0; i< tablica.Length;i++)
+for (int i = 0; i< counter.Length;i++)
 {
-    Console.WriteLine(tablica[i] + "  ->  " + znacz[i]);
+    Console.WriteLine(counter[i] + "  ->  " + result[i]);
 }
